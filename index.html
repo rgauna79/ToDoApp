@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="header">
+            <h1 class="title">TO-DO App</h1> 
+    </header>
+    <nav class="nav">
+        <ul class="nav-bar">
+            <li>
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-calendar-day"></i>
+                <span>Today</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-calendar-week"></i>
+                <span>This Week</span>
+            </li>
+        </ul>
+            <hr>
+        <ul class="menu-projects">
+            <li>
+                <i class="fa-solid fa-list-check"></i>
+                <span>Projects:</span><button id="btn-show-form" class="btn-icon"><i class="fa-solid fa-plus"></i></button>
+                <ul id=projects>
+                </ul>
+            </li>
+        </ul>
+        <div class="btn-container">
+            
+        </div>
+        <div class="project-form" id="container-form-project">
+            <div class="project-form-header">
+                <h4>New Project</h4>
+                <button id="btn-close-project" class="btn-icon">
+                <i class="fa-solid fa-xmark" style="color: #fff;"></i></button>
+            </div>
+            <form id="project-form">
+            <fieldset>
+                <label for="nameProject">
+                    Project Name :
+                </label>
+                <input type="text" id="nameProject" name="nameProject" placeholder="i.e. Coding" required> </input>
+                <button type="submit" id="btn-submit-project" form="project-form">Add Project</button>
+            </fieldset>
+            </form>
+        </div>
+    </nav>
+    <main class="main-content">
+        <h4>To do list</h4>
+        <h3 id="project-title"></h3>
+        <div id="todos">
+            <table id="todo-table" class="todo-table">
+                <tr>
+                    <th>Status</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Actions</th>
+                </tr>
+            </table>
+        </div>
+        <button class="btn-add-todo" id="btn-add-todo">Add</button>
+    </main>
+    
+    <footer class="footer">
+        <p>Created By Roberto Gauna</p>
+    </footer>
+    
+    <div class="modal-form" id="add-todo">
+        <form class="add-todo-form" id="todo-form">
+            <h4>Add a To do</h4>
+            <input type="text" id="title" name="title" placeholder="Title" required>
+            <input type="text" id="description" placeholder="Description" name="description" required>
+            <label for="dueDate">Due date</label>
+            <input type="date" id="dueDate" name="dueDate"required>
+            <label for="priority">Priority</label>
+            <select name="priority" id="priority" required>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+            <button type="submit" id="btn-submit-todo" form="todo-form">Add</button>
+        </form>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,312 @@
+/* Global Variables */
+:root{
+	--accent-color:#164E63;
+    --high-color:#155E75;
+    --medium-color:#0891B2;
+    --low-color:#67E8F9;
+    --text-color:#292524;
+	--text-color-light:#67E8F9;
+    --bg-color:#ECFEFF;
+        
+    --shadow: 4px 4px 0 1px rgba(0,0,0,0.5);
+	--radius: 0.5rem;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body{
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	height: 100vh;
+   	display: grid;
+	grid-template-columns: minmax(250px, 1fr) minmax(auto,3fr);
+	grid-template-rows: 0.2fr 5fr 0.2fr;
+}
+
+
+
+.header{
+	background-color: var(--accent-color);
+	padding: 0.5rem;
+	box-shadow: var(--shadow);
+/* 	margin-bottom: 1rem; */
+	grid-column: span 2;
+    /* width: 100%; */
+	
+}
+
+.header > h1 {
+	color: var(--text-color-light);
+}
+
+/* Navigation Bar */
+.nav {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	background-color: var(--medium-color);
+	padding: 1.5rem;
+	min-width: 250px;
+}
+
+li{
+	text-decoration: none;
+	list-style-type: none;
+}
+.nav-bar > li:hover{
+    background-color: var(--low-color);
+	border-radius: 1rem;
+}
+
+i{
+	margin-right: 5px;
+}
+
+.nav-bar{
+	flex: 1;
+}
+
+.menu-projects{
+	flex: 5;
+}
+
+ul#projects li {
+	display: flex;
+	gap: 0.2rem;
+	cursor: pointer;
+	margin-bottom: 0.2rem;
+}
+ul#projects li:hover {
+	background-color: var(--low-color);
+	border-radius: 1rem;
+}
+
+#projects > li > i{
+	display:flex;
+	align-items:center;
+}
+
+#projects > li > p{
+	flex: 1;
+}
+
+
+#projects > li > button:hover{
+	opacity: 0.75;
+}
+
+.btn-container{
+	align-self: center;
+}
+
+#btn-show-form{
+    margin-left: 5px;
+}
+/* Form to Add Project */
+
+.project-form{
+	display: flex;
+	flex-direction:column;
+	visibility: hidden;
+	width: 100%;
+	margin: 0 auto;
+	background-color: var(--low-color);
+	padding: 0.5rem;
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	z-index: 9;
+}
+.project-form-header{
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 0.5rem;
+}
+#btn-close-project{
+	border-radius: 100%;
+	width: 25px;
+	height: 25px;
+	border: none;
+	background-color: var(--accent-color);
+}
+#project-form{
+	display: flex;
+	flex-direction: column;
+}
+
+#project-form > fieldset{
+	padding: 0.5rem;
+	border-radius: var(--radius);
+	width: 100%;
+}
+
+#nameProject{
+	margin-bottom: 0.5rem;
+	padding: 0.2rem;
+	width: 100%;
+}
+
+
+/* Content List */
+.main-content{
+	padding: 30px;
+	/* min-height: 100%; */
+    /* min-width: 600px; */
+
+}
+#project-title{
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+    background-color: var(--accent-color);
+    color: var(--text-color-light);
+}
+
+#todos{
+    width: 100%;
+    overflow-x: auto;
+}
+.todo-table{
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+td{
+    min-height: 50px;
+}
+tr:first-child {
+    background-color: var(--medium-color);
+
+}
+tr:not(:first-child){
+    background-color: var(--low-color);
+}
+th{
+    cursor:pointer;
+    background-color: var(--medium-color);
+}
+
+
+
+td:first-child {
+    text-align: center;
+}
+
+/* Footer */
+.footer{
+	grid-column: span 2;
+	background-color: var(--accent-color);
+    color: var(--text-color-light);
+    text-align: center;
+}
+
+/* Modal form to add To DO */
+
+.modal-form.active{
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-form {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left:50%;
+  width:300px;
+  
+   transform: translate(-50%, -50%) scale(0);
+   transition: 0.2s ease-in-out;
+}
+
+.add-todo-form {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--high-color);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: var(--shadow);
+  
+}
+
+#todo-form > input, select {
+    border-radius: var(--radius);
+    padding: 0.2rem;
+}
+.overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+/* Buttons Icons fontawesone */
+.btn-icon {
+	position: relative;
+	display: inline-block;
+	border-radius: 50%;
+    height: 30px;
+	width: 30px;
+	border: none;
+	background-color: var(--accent-color);
+	color: var(--bg-color);
+    cursor: pointer;
+}
+.btn-icon:before{
+	content: "";
+	display: inline-block;
+  	vertical-align: middle;
+  	height: 100%;
+}
+.btn-icon i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 600px) {
+    body{
+        grid-template-columns: 100%;
+	    grid-template-rows: 60px auto 1fr 30px;
+
+    }
+    .header{
+        grid-column: 1;
+    }
+    .nav{
+        width: 100vw;
+        display: block;
+        min-width: 350px;
+
+    }
+    .main-content{
+        height: 100%;
+        overflow: scroll;
+        width: 100%;
+        min-width: 350px;
+
+
+    }
+    .footer{
+        grid-column: 1;
+        width: 100%;
+        min-width: 350px;
+
+    }
+   
+    .project-form{
+        position:relative;
+        width: 350px;
+        display: none;
+       text-align: left;
+    }
+}
