@@ -1,11 +1,11 @@
 //global Variables
 const projects = JSON.parse(localStorage.getItem('projects')) || [];
-const addProject = document.getElementById('btn-submit-project');
+//const addProject = document.getElementById('btn-submit-project');
 const createBtnProject = document.getElementById('btn-show-form');
 const projectTitle = document.getElementById("project-title");
 const formProject =  document.getElementById('container-form-project');
 const projectsElement = document.getElementById("projects");
-const addTodoBtn = document.getElementById("btn-submit-todo");
+//const addTodoBtn = document.getElementById("btn-submit-todo");
 const addTodoForm = document.getElementById('btn-add-todo');
 const table = document.getElementById('todo-table');
 const tableHeaders = table.getElementsByTagName('th');
@@ -51,9 +51,7 @@ const closeFormProject = () => {
 }
 
 //create project
-const createProject = (event) => {
-	event.preventDefault();
-	//console.log(event);
+const createProject = () => {
 	const name = document.getElementById('nameProject').value;
 	projects.push(new Project(name, []));
 	//Save project to localstorage
@@ -271,8 +269,8 @@ const clearList = () => {
 }
 
 // Add todo to project
-function addTodoToProject(event) {
-	event.preventDefault();
+function addTodoToProject() {
+	//event.preventDefault();
 	//get index of project
 	const projectIndex = projects.findIndex((p) => p.name === projectTitle.innerText);
 	const project = projects[projectIndex];
@@ -363,9 +361,9 @@ function init(){
 window.addEventListener("load",init);
 
 //Listeners
-addProject.onclick = createProject;
+//addProject.onclick = createProject;
 createBtnProject.onclick = showFormProject;
-addTodoBtn.onclick = addTodoToProject;
+//addTodoBtn.onclick = addTodoToProject;
 addTodoForm.onclick = openModalAddForm;
 document.getElementById('overlay').onclick = closeModalAddForm;
 document.getElementById('btn-close-project').onclick = closeFormProject;

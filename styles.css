@@ -58,6 +58,7 @@ body{
 li{
 	text-decoration: none;
 	list-style-type: none;
+    padding: 2px 5px;
 }
 .nav-bar > li:hover{
     background-color: var(--low-color);
